@@ -1,0 +1,67 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>bp.Core</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<class depth="0" id="1">
+			<name>MyBaseClass</name>
+			<code>
+				<function depth="1" id="2">
+					<name>init</name>
+					<code>
+						<assign depth="2" id="3">
+							<value>
+								<access>
+									<value>my</value>
+									<value>prop</value>
+								</access>
+							</value>
+							<value>5</value>
+						</assign>
+					</code>
+					<meta/>
+				</function>
+				<public depth="1" id="4">
+					<public-member depth="2" id="5">prop</public-member>
+				</public>
+			</code>
+		</class>
+		<class depth="0" id="6">
+			<name>MyDerivedClass</name>
+			<code>
+				<function depth="1" id="7">
+					<name>init</name>
+					<code>
+						<noop depth="2" id="8"/>
+					</code>
+					<meta/>
+				</function>
+			</code>
+			<meta/>
+		</class>
+		<assign depth="0" id="9">
+			<value>a</value>
+			<value>
+				<new>
+					<type>MyDerivedClass</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="10">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<access>
+						<value>a</value>
+						<value>prop</value>
+					</access>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

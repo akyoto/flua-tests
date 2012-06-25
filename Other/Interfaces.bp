@@ -1,0 +1,41 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>bp.Core</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<interface depth="0" id="1">
+			<name>Animal</name>
+			<code>
+				<function depth="1" id="2" implemented="false">
+					<parameters>
+						<parameter>x</parameter>
+						<parameter>y</parameter>
+					</parameters>
+					<name>do</name>
+					<code/>
+					<meta/>
+				</function>
+				<function depth="1" id="3" implemented="false">
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+					<name>something</name>
+					<code/>
+					<meta/>
+				</function>
+				<function depth="1" id="4" implemented="false">
+					<parameters>
+						<parameter>a</parameter>
+					</parameters>
+					<name>doImpl</name>
+					<code/>
+					<meta/>
+				</function>
+			</code>
+		</interface>
+	</code>
+</module>
