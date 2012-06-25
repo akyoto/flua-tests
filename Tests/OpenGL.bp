@@ -12,8 +12,6 @@
 			<string id="bp_string_2">Shader/VS.glsl</string>
 			<string id="bp_string_3">Shader/FS.glsl</string>
 			<string id="bp_string_4">Textures/tiles.png</string>
-			<string id="bp_string_5">Mouse:\S</string>
-			<string id="bp_string_6">,\S</string>
 		</strings>
 	</header>
 	<code>
@@ -308,40 +306,8 @@
 								<parameter>0.65</parameter>
 							</parameters>
 						</call>
-						<comment>\SMouse\Scoordinates</comment>
-						<call depth="2" id="23">
-							<function>print</function>
-							<parameters>
-								<parameter>
-									<add>
-										<value>
-											<add>
-												<value>
-													<add>
-														<value>bp_string_5</value>
-														<value>
-															<call>
-																<function>getMouseX</function>
-																<parameters/>
-															</call>
-														</value>
-													</add>
-												</value>
-												<value>bp_string_6</value>
-											</add>
-										</value>
-										<value>
-											<call>
-												<function>getMouseY</function>
-												<parameters/>
-											</call>
-										</value>
-									</add>
-								</parameter>
-							</parameters>
-						</call>
 						<comment>\SColor\Sfor\Sthe\Smaterial\Sof\Sthe\Scube</comment>
-						<assign depth="2" id="24">
+						<assign depth="2" id="23">
 							<value>color</value>
 							<value>
 								<access>
@@ -350,7 +316,7 @@
 								</access>
 							</value>
 						</assign>
-						<assign depth="2" id="25">
+						<assign depth="2" id="24">
 							<value>
 								<access>
 									<value>color</value>
@@ -388,7 +354,7 @@
 								</call>
 							</value>
 						</assign>
-						<assign depth="2" id="26">
+						<assign depth="2" id="25">
 							<value>
 								<access>
 									<value>color</value>
@@ -426,7 +392,7 @@
 								</call>
 							</value>
 						</assign>
-						<assign depth="2" id="27">
+						<assign depth="2" id="26">
 							<value>
 								<access>
 									<value>color</value>
@@ -464,8 +430,108 @@
 								</call>
 							</value>
 						</assign>
+						<assign depth="2" id="27">
+							<value>
+								<access>
+									<value>color</value>
+									<value>alpha</value>
+								</access>
+							</value>
+							<value>
+								<call>
+									<function>abs</function>
+									<parameters>
+										<parameter>
+											<call>
+												<function>sin</function>
+												<parameters>
+													<parameter>
+														<add>
+															<value>
+																<multiply>
+																	<value>
+																		<call>
+																			<function>systemTime</function>
+																			<parameters/>
+																		</call>
+																	</value>
+																	<value>0.0005</value>
+																</multiply>
+															</value>
+															<value>4</value>
+														</add>
+													</parameter>
+												</parameters>
+											</call>
+										</parameter>
+									</parameters>
+								</call>
+							</value>
+						</assign>
 						<comment>\SPick\Sa\Scamera</comment>
-						<call depth="2" id="28">
+						<assign depth="2" id="28">
+							<value>
+								<access>
+									<value>
+										<access>
+											<value>cam</value>
+											<value>rotation</value>
+										</access>
+									</value>
+									<value>x</value>
+								</access>
+							</value>
+							<value>
+								<multiply>
+									<value>
+										<subtract>
+											<value>
+												<call>
+													<function>getMouseX</function>
+													<parameters/>
+												</call>
+											</value>
+											<value>400</value>
+										</subtract>
+									</value>
+									<value>0.0005</value>
+								</multiply>
+							</value>
+						</assign>
+						<assign depth="2" id="29">
+							<value>
+								<access>
+									<value>
+										<access>
+											<value>cam</value>
+											<value>rotation</value>
+										</access>
+									</value>
+									<value>y</value>
+								</access>
+							</value>
+							<value>
+								<multiply>
+									<value>
+										<negative>
+											<value>
+												<subtract>
+													<value>
+														<call>
+															<function>getMouseY</function>
+															<parameters/>
+														</call>
+													</value>
+													<value>300</value>
+												</subtract>
+											</value>
+										</negative>
+									</value>
+									<value>0.0005</value>
+								</multiply>
+							</value>
+						</assign>
+						<call depth="2" id="30">
 							<function>
 								<access>
 									<value>cam</value>
@@ -475,7 +541,7 @@
 							<parameters/>
 						</call>
 						<comment>\SDraw</comment>
-						<call depth="2" id="29">
+						<call depth="2" id="31">
 							<function>
 								<access>
 									<value>scene</value>
