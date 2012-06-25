@@ -37,5 +37,31 @@
 				</function>
 			</code>
 		</interface>
+		<class depth="0" id="5">
+			<name>Dog</name>
+			<code>
+				<implements depth="1" id="6">
+					<implements-interface depth="2" id="7">Animal</implements-interface>
+				</implements>
+				<function depth="1" id="8">
+					<name>init</name>
+					<code>
+						<noop depth="2" id="9"/>
+					</code>
+				</function>
+			</code>
+			<meta/>
+		</class>
+		<implements-interface depth="0" id="10">
+			<assign>
+				<value>a</value>
+				<value>
+					<new>
+						<type>Dog</type>
+						<parameters/>
+					</new>
+				</value>
+			</assign>
+		</implements-interface>
 	</code>
 </module>
