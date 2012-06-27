@@ -1,0 +1,149 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<class depth="0" id="1">
+			<name>MyClass</name>
+			<code>
+				<function depth="1" id="2">
+					<name>init</name>
+					<code>
+						<on depth="2" id="3">
+							<expression>my</expression>
+							<code>
+								<assign depth="3" id="4">
+									<value>a</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="5">
+									<value>x</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="6">
+									<value>y</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="7">
+									<value>z</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="8">
+									<value>
+										<declare-type>
+											<value>val</value>
+											<value>MyClass</value>
+										</declare-type>
+									</value>
+									<value>null</value>
+								</assign>
+							</code>
+						</on>
+					</code>
+					<meta/>
+				</function>
+				<public depth="1" id="9">
+					<public-member depth="2" id="10">a</public-member>
+					<public-member depth="2" id="11">x</public-member>
+					<public-member depth="2" id="12">y</public-member>
+					<public-member depth="2" id="13">z</public-member>
+					<public-member depth="2" id="14">val</public-member>
+				</public>
+			</code>
+			<meta/>
+		</class>
+		<assign depth="0" id="15">
+			<value>a</value>
+			<value>
+				<new>
+					<type>MyClass</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<assign depth="0" id="16">
+			<value>x</value>
+			<value>7</value>
+		</assign>
+		<on depth="0" id="17">
+			<expression>a</expression>
+			<code>
+				<assign depth="1" id="18">
+					<value>a</value>
+					<value>
+						<access>
+							<value>a</value>
+							<value>a</value>
+						</access>
+					</value>
+				</assign>
+				<assign depth="1" id="19">
+					<value>y</value>
+					<value>5</value>
+				</assign>
+				<assign depth="1" id="20">
+					<value>z</value>
+					<value>8</value>
+				</assign>
+				<assign depth="1" id="21">
+					<value>x</value>
+					<value>x</value>
+				</assign>
+				<assign depth="1" id="22">
+					<value>val</value>
+					<value>
+						<new>
+							<type>MyClass</type>
+							<parameters/>
+						</new>
+					</value>
+				</assign>
+			</code>
+		</on>
+		<on depth="0" id="23">
+			<expression>a</expression>
+			<code>
+				<assign depth="1" id="24">
+					<value>
+						<access>
+							<value>val</value>
+							<value>a</value>
+						</access>
+					</value>
+					<value>5</value>
+				</assign>
+			</code>
+		</on>
+		<call depth="0" id="25">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<access>
+						<value>a</value>
+						<value>a</value>
+					</access>
+				</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="26">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<access>
+						<value>
+							<access>
+								<value>a</value>
+								<value>val</value>
+							</access>
+						</value>
+						<value>a</value>
+					</access>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

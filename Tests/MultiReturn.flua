@@ -1,0 +1,59 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">5</string>
+		</strings>
+	</header>
+	<code>
+		<function depth="0" id="1">
+			<name>func</name>
+			<code>
+				<return depth="1" id="2">
+					<parameters>
+						<parameter>3</parameter>
+						<parameter>4</parameter>
+						<parameter>flua_string_0</parameter>
+					</parameters>
+				</return>
+			</code>
+			<meta/>
+		</function>
+		<assign depth="0" id="3">
+			<value>
+				<parameters>
+					<parameter>a</parameter>
+					<parameter>b</parameter>
+					<parameter>c</parameter>
+				</parameters>
+			</value>
+			<value>
+				<call>
+					<function>func</function>
+					<parameters/>
+				</call>
+			</value>
+		</assign>
+		<call depth="0" id="4">
+			<function>print</function>
+			<parameters>
+				<parameter>a</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="5">
+			<function>print</function>
+			<parameters>
+				<parameter>b</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="6">
+			<function>print</function>
+			<parameters>
+				<parameter>c</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

@@ -1,0 +1,53 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.Collection.List</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>a</value>
+			<value>
+				<new>
+					<type>
+						<template-call>
+							<value>List</value>
+							<value>
+								<template-call>
+									<value>List</value>
+									<value>Int</value>
+								</template-call>
+							</value>
+						</template-call>
+					</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<comment>b\S=\SList&lt;Int&gt;()</comment>
+		<comment>b.add(42)</comment>
+		<comment>b.add(43)</comment>
+		<comment>a.add(b)</comment>
+		<foreach depth="0" id="2">
+			<iterator>x</iterator>
+			<collection>a</collection>
+			<code>
+				<foreach depth="1" id="3">
+					<iterator>l</iterator>
+					<collection>x</collection>
+					<code>
+						<call depth="2" id="4">
+							<function>print</function>
+							<parameters>
+								<parameter>l</parameter>
+							</parameters>
+						</call>
+					</code>
+				</foreach>
+			</code>
+		</foreach>
+	</code>
+</module>
