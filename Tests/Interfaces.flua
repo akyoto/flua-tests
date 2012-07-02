@@ -4,7 +4,10 @@
 		<dependencies>
 			<import>flua.Core</import>
 		</dependencies>
-		<strings/>
+		<strings>
+			<string id="flua_string_0">Woof</string>
+			<string id="flua_string_1">End</string>
+		</strings>
 	</header>
 	<code>
 		<interface depth="0" id="1">
@@ -20,48 +23,62 @@
 					<meta/>
 				</function>
 				<function depth="1" id="3" implemented="false">
-					<parameters>
-						<parameter>x</parameter>
-					</parameters>
-					<name>something</name>
-					<code/>
-					<meta/>
-				</function>
-				<function depth="1" id="4" implemented="false">
-					<parameters>
-						<parameter>a</parameter>
-					</parameters>
-					<name>doImpl</name>
+					<name>makeSound</name>
 					<code/>
 					<meta/>
 				</function>
 			</code>
 		</interface>
-		<class depth="0" id="5">
+		<class depth="0" id="4">
 			<name>Dog</name>
 			<code>
-				<implements depth="1" id="6">
-					<implements-interface depth="2" id="7">Animal</implements-interface>
+				<implements depth="1" id="5">
+					<implements-interface depth="2" id="6">Animal</implements-interface>
 				</implements>
-				<function depth="1" id="8">
+				<function depth="1" id="7">
 					<name>init</name>
 					<code>
-						<noop depth="2" id="9"/>
+						<noop depth="2" id="8"/>
+					</code>
+					<meta/>
+				</function>
+				<function depth="1" id="9">
+					<name>makeSound</name>
+					<code>
+						<call depth="2" id="10">
+							<function>print</function>
+							<parameters>
+								<parameter>flua_string_0</parameter>
+							</parameters>
+						</call>
 					</code>
 				</function>
 			</code>
 			<meta/>
 		</class>
-		<implements-interface depth="0" id="10">
-			<assign>
-				<value>a</value>
-				<value>
-					<new>
-						<type>Dog</type>
-						<parameters/>
-					</new>
-				</value>
-			</assign>
-		</implements-interface>
+		<assign depth="0" id="11">
+			<value>a</value>
+			<value>
+				<new>
+					<type>Dog</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="12">
+			<function>
+				<access>
+					<value>a</value>
+					<value>makeSound</value>
+				</access>
+			</function>
+			<parameters/>
+		</call>
+		<call depth="0" id="13">
+			<function>print</function>
+			<parameters>
+				<parameter>flua_string_1</parameter>
+			</parameters>
+		</call>
 	</code>
 </module>

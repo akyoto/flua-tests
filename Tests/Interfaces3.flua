@@ -1,0 +1,92 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">Hello</string>
+		</strings>
+	</header>
+	<code>
+		<class depth="0" id="1">
+			<name>Animal</name>
+			<code>
+				<function depth="1" id="2">
+					<parameters>
+						<parameter>x</parameter>
+						<parameter>y</parameter>
+					</parameters>
+					<name>do</name>
+					<code>
+						<noop depth="2" id="3"/>
+					</code>
+				</function>
+				<function depth="1" id="4">
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+					<name>something</name>
+					<code>
+						<noop depth="2" id="5"/>
+					</code>
+				</function>
+				<function depth="1" id="6">
+					<parameters>
+						<parameter>a</parameter>
+					</parameters>
+					<name>doImpl</name>
+					<code>
+						<noop depth="2" id="7"/>
+					</code>
+					<meta/>
+				</function>
+			</code>
+		</class>
+		<class depth="0" id="8">
+			<name>Dog</name>
+			<code>
+				<extends depth="1" id="9">
+					<extends-class depth="2" id="10">Animal</extends-class>
+				</extends>
+				<function depth="1" id="11">
+					<name>init</name>
+					<code>
+						<noop depth="2" id="12"/>
+					</code>
+					<meta/>
+				</function>
+				<function depth="1" id="13">
+					<name>doThis</name>
+					<code>
+						<call depth="2" id="14">
+							<function>print</function>
+							<parameters>
+								<parameter>flua_string_0</parameter>
+							</parameters>
+						</call>
+					</code>
+					<meta/>
+				</function>
+			</code>
+		</class>
+		<assign depth="0" id="15">
+			<value>a</value>
+			<value>
+				<new>
+					<type>Dog</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="16">
+			<function>
+				<access>
+					<value>a</value>
+					<value>doThis</value>
+				</access>
+			</function>
+			<parameters/>
+		</call>
+	</code>
+</module>

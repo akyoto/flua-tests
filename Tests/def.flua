@@ -1,0 +1,58 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>playground.Everything</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<function depth="0" id="1">
+			<parameters>
+				<parameter>
+					<declare-type>
+						<value>source</value>
+						<value>
+							<template-call>
+								<value>Vector</value>
+								<value>Byte</value>
+							</template-call>
+						</value>
+					</declare-type>
+				</parameter>
+				<parameter>
+					<declare-type>
+						<value>dest</value>
+						<value>
+							<template-call>
+								<value>Vector</value>
+								<value>Byte</value>
+							</template-call>
+						</value>
+					</declare-type>
+				</parameter>
+			</parameters>
+			<name>clone</name>
+			<code>
+				<foreach depth="1" id="2">
+					<counter>xpos</counter>
+					<iterator>x</iterator>
+					<collection>source</collection>
+					<code>
+						<assign depth="2" id="3">
+							<value>
+								<index>
+									<value>dest</value>
+									<value>xpos</value>
+								</index>
+							</value>
+							<value>x</value>
+						</assign>
+					</code>
+				</foreach>
+			</code>
+			<meta/>
+		</function>
+	</code>
+</module>

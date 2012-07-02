@@ -1,0 +1,151 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.Collection.Vector</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">removeLast\Sat\S</string>
+			<string id="flua_string_1">\E</string>
+			<string id="flua_string_2">------</string>
+			<string id="flua_string_3">\E</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>vector</value>
+			<value>
+				<new>
+					<type>
+						<template-call>
+							<value>Vector</value>
+							<value>Int</value>
+						</template-call>
+					</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="2">
+			<function>
+				<access>
+					<value>vector</value>
+					<value>add</value>
+				</access>
+			</function>
+			<parameters>
+				<parameter>1</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="3">
+			<function>
+				<access>
+					<value>vector</value>
+					<value>add</value>
+				</access>
+			</function>
+			<parameters>
+				<parameter>2</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="4">
+			<function>
+				<access>
+					<value>vector</value>
+					<value>add</value>
+				</access>
+			</function>
+			<parameters>
+				<parameter>3</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="5">
+			<function>
+				<access>
+					<value>vector</value>
+					<value>add</value>
+				</access>
+			</function>
+			<parameters>
+				<parameter>4</parameter>
+			</parameters>
+		</call>
+		<foreach depth="0" id="6">
+			<iterator>i</iterator>
+			<collection>vector</collection>
+			<code>
+				<if-block depth="1" id="7">
+					<if>
+						<condition>
+							<equal>
+								<value>i</value>
+								<value>2</value>
+							</equal>
+						</condition>
+						<code>
+							<call depth="2" id="8">
+								<function>print</function>
+								<parameters>
+									<parameter>
+										<add>
+											<value>flua_string_0</value>
+											<value>i</value>
+										</add>
+									</parameter>
+								</parameters>
+							</call>
+							<call depth="2" id="9">
+								<function>
+									<access>
+										<value>vector</value>
+										<value>removeLast</value>
+									</access>
+								</function>
+								<parameters/>
+							</call>
+						</code>
+					</if>
+					<else depth="1" id="10">
+						<code>
+							<call depth="2" id="11">
+								<function>print</function>
+								<parameters>
+									<parameter>
+										<add>
+											<value>flua_string_1</value>
+											<value>i</value>
+										</add>
+									</parameter>
+								</parameters>
+							</call>
+						</code>
+					</else>
+				</if-block>
+				<call depth="1" id="12">
+					<function>print</function>
+					<parameters>
+						<parameter>flua_string_2</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+		<foreach depth="0" id="13">
+			<iterator>i</iterator>
+			<collection>vector</collection>
+			<code>
+				<call depth="1" id="14">
+					<function>print</function>
+					<parameters>
+						<parameter>
+							<add>
+								<value>flua_string_3</value>
+								<value>i</value>
+							</add>
+						</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+	</code>
+</module>

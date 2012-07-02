@@ -1,0 +1,270 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>playground.Everything</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">This\Sis\Sthe\Sstring\Sthat\Swill\Sbe\Sevolved.</string>
+			<string id="flua_string_1">Here..</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>TARGETSTRING</value>
+			<value>flua_string_0</value>
+		</assign>
+		<const depth="0" id="2">
+			<assign depth="1" id="3">
+				<value>POPSIZE</value>
+				<value>50</value>
+			</assign>
+		</const>
+		<assign depth="0" id="4">
+			<value>population</value>
+			<value>
+				<new>
+					<type>
+						<template-call>
+							<value>Array</value>
+							<value>
+								<template-call>
+									<value>Vector</value>
+									<value>Byte</value>
+								</template-call>
+							</value>
+						</template-call>
+					</type>
+					<parameters>
+						<parameter>POPSIZE</parameter>
+					</parameters>
+				</new>
+			</value>
+		</assign>
+		<function depth="0" id="5">
+			<name>createPOP</name>
+			<code>
+				<for depth="1" id="6">
+					<iterator>i</iterator>
+					<from>0</from>
+					<until>POPSIZE</until>
+					<code>
+						<assign depth="2" id="7">
+							<value>
+								<index>
+									<value>population</value>
+									<value>i</value>
+								</index>
+							</value>
+							<value>
+								<new>
+									<type>
+										<template-call>
+											<value>Vector</value>
+											<value>Byte</value>
+										</template-call>
+									</type>
+									<parameters/>
+								</new>
+							</value>
+						</assign>
+						<comment>=\S0\Suntil\STARGETSTRING.length</comment>
+						<foreach depth="2" id="8">
+							<iterator>j</iterator>
+							<collection>TARGETSTRING</collection>
+							<code>
+								<call depth="3" id="9">
+									<function>
+										<access>
+											<value>
+												<index>
+													<value>population</value>
+													<value>i</value>
+												</index>
+											</value>
+											<value>add</value>
+										</access>
+									</function>
+									<parameters>
+										<parameter>
+											<call>
+												<function>rand</function>
+												<parameters>
+													<parameter>32</parameter>
+													<parameter>125</parameter>
+												</parameters>
+											</call>
+										</parameter>
+									</parameters>
+								</call>
+							</code>
+						</foreach>
+					</code>
+				</for>
+			</code>
+		</function>
+		<call depth="0" id="10">
+			<function>print</function>
+			<parameters>
+				<parameter>flua_string_1</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="11">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<access>
+						<value>TARGETSTRING</value>
+						<value>length</value>
+					</access>
+				</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="12">
+			<function>createPOP</function>
+			<parameters/>
+		</call>
+		<call depth="0" id="13">
+			<function>getScore</function>
+			<parameters>
+				<parameter>
+					<index>
+						<value>population</value>
+						<value>0</value>
+					</index>
+				</parameter>
+			</parameters>
+		</call>
+		<function depth="0" id="14">
+			<name>findBest</name>
+			<code>
+				<assign depth="1" id="15">
+					<value>
+						<declare-type>
+							<value>best</value>
+							<value>Int</value>
+						</declare-type>
+					</value>
+					<value>0</value>
+				</assign>
+				<assign depth="1" id="16">
+					<value>
+						<declare-type>
+							<value>bscore</value>
+							<value>Int</value>
+						</declare-type>
+					</value>
+					<value>
+						<negative>
+							<value>999</value>
+						</negative>
+					</value>
+				</assign>
+				<assign depth="1" id="17">
+					<value>
+						<declare-type>
+							<value>score</value>
+							<value>Int</value>
+						</declare-type>
+					</value>
+					<value>0</value>
+				</assign>
+				<foreach depth="1" id="18">
+					<iterator>x</iterator>
+					<collection>population</collection>
+					<code>
+						<foreach depth="2" id="19">
+							<counter>pos</counter>
+							<iterator>i</iterator>
+							<collection>
+								<access>
+									<value>TARGETSTRING</value>
+									<value>bytes</value>
+								</access>
+							</collection>
+							<code>
+								<assign depth="3" id="20">
+									<value>score</value>
+									<value>
+										<call>
+											<function>abs</function>
+											<parameters>
+												<parameter>
+													<subtract>
+														<value>i</value>
+														<value>x</value>
+													</subtract>
+												</parameter>
+											</parameters>
+										</call>
+									</value>
+								</assign>
+							</code>
+						</foreach>
+					</code>
+				</foreach>
+			</code>
+		</function>
+		<function depth="0" id="21">
+			<parameters>
+				<parameter>
+					<declare-type>
+						<value>a</value>
+						<value>
+							<template-call>
+								<value>Vector</value>
+								<value>Byte</value>
+							</template-call>
+						</value>
+					</declare-type>
+				</parameter>
+			</parameters>
+			<name>getScore</name>
+			<code>
+				<assign depth="1" id="22">
+					<value>
+						<declare-type>
+							<value>score</value>
+							<value>Int</value>
+						</declare-type>
+					</value>
+					<value>0</value>
+				</assign>
+				<foreach depth="1" id="23">
+					<counter>pos</counter>
+					<iterator>x</iterator>
+					<collection>
+						<access>
+							<value>TARGETSTRING</value>
+							<value>bytes</value>
+						</access>
+					</collection>
+					<code>
+						<assign-add depth="2" id="24">
+							<value>score</value>
+							<value>
+								<call>
+									<function>abs</function>
+									<parameters>
+										<parameter>
+											<subtract>
+												<value>x</value>
+												<value>
+													<index>
+														<value>a</value>
+														<value>pos</value>
+													</index>
+												</value>
+											</subtract>
+										</parameter>
+									</parameters>
+								</call>
+							</value>
+						</assign-add>
+					</code>
+				</foreach>
+			</code>
+		</function>
+	</code>
+</module>

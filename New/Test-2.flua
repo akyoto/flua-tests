@@ -1,0 +1,109 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>playground.Everything</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">testtest</string>
+		</strings>
+	</header>
+	<code>
+		<comment>\S-----------------------------------------------------------------------------------------</comment>
+		<class depth="0" id="1">
+			<name>Myclass</name>
+			<code>
+				<public depth="1" id="2">
+					<public-member depth="2" id="3">
+						<declare-type>
+							<value>var1</value>
+							<value>Int</value>
+						</declare-type>
+					</public-member>
+					<public-member depth="2" id="4">
+						<declare-type>
+							<value>var2</value>
+							<value>Float</value>
+						</declare-type>
+					</public-member>
+				</public>
+				<function depth="1" id="5">
+					<name>init</name>
+					<code>
+						<noop depth="2" id="6"/>
+					</code>
+				</function>
+			</code>
+		</class>
+		<comment>\S-----------------------------------------------------------------------------------------</comment>
+		<class depth="0" id="7">
+			<name>Myclass2 extends Myclass</name>
+			<code>
+				<public depth="1" id="8">
+					<public-member depth="2" id="9">
+						<declare-type>
+							<value>var3</value>
+							<value>String</value>
+						</declare-type>
+					</public-member>
+				</public>
+				<function depth="1" id="10">
+					<name>init</name>
+					<code>
+						<assign depth="2" id="11">
+							<value>
+								<access>
+									<value>my</value>
+									<value>var3</value>
+								</access>
+							</value>
+							<value>flua_string_0</value>
+						</assign>
+					</code>
+				</function>
+			</code>
+		</class>
+		<comment>\S-----------------------------------------------------------------------------------------</comment>
+		<assign depth="0" id="12">
+			<value>mc</value>
+			<value>
+				<new>
+					<type>Myclass</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="13">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<access>
+						<value>mc</value>
+						<value>var1</value>
+					</access>
+				</parameter>
+			</parameters>
+		</call>
+		<assign depth="0" id="14">
+			<value>mc2</value>
+			<value>
+				<new>
+					<type>Myclass2</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="15">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<access>
+						<value>mc2</value>
+						<value>var3</value>
+					</access>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

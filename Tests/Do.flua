@@ -1,0 +1,70 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">Hello!</string>
+		</strings>
+	</header>
+	<code>
+		<class depth="0" id="1">
+			<name>MyAwesomeClass</name>
+			<code>
+				<function depth="1" id="2">
+					<name>init</name>
+					<code>
+						<noop depth="2" id="3"/>
+					</code>
+				</function>
+				<function depth="1" id="4">
+					<name>do</name>
+					<code>
+						<assign depth="2" id="5">
+							<value>
+								<access>
+									<value>my</value>
+									<value>msg</value>
+								</access>
+							</value>
+							<value>flua_string_0</value>
+						</assign>
+					</code>
+				</function>
+				<public depth="1" id="6">
+					<public-member depth="2" id="7">msg</public-member>
+				</public>
+			</code>
+		</class>
+		<assign depth="0" id="8">
+			<value>a</value>
+			<value>
+				<new>
+					<type>MyAwesomeClass</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="9">
+			<function>
+				<access>
+					<value>a</value>
+					<value>do</value>
+				</access>
+			</function>
+			<parameters/>
+		</call>
+		<call depth="0" id="10">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<access>
+						<value>a</value>
+						<value>msg</value>
+					</access>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

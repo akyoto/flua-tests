@@ -1,0 +1,95 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.Collection</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>arr</value>
+			<value>
+				<new>
+					<type>
+						<template-call>
+							<value>Array</value>
+							<value>
+								<template-call>
+									<value>Array</value>
+									<value>Int</value>
+								</template-call>
+							</value>
+						</template-call>
+					</type>
+					<parameters>
+						<parameter>16</parameter>
+					</parameters>
+				</new>
+			</value>
+		</assign>
+		<foreach depth="0" id="2">
+			<counter>idx</counter>
+			<iterator>x</iterator>
+			<collection>arr</collection>
+			<code>
+				<assign depth="1" id="3">
+					<value>j</value>
+					<value>
+						<new>
+							<type>
+								<template-call>
+									<value>Array</value>
+									<value>Int</value>
+								</template-call>
+							</type>
+							<parameters>
+								<parameter>16</parameter>
+							</parameters>
+						</new>
+					</value>
+				</assign>
+				<assign depth="1" id="4">
+					<value>
+						<index>
+							<value>arr</value>
+							<value>idx</value>
+						</index>
+					</value>
+					<value>j</value>
+				</assign>
+			</code>
+		</foreach>
+		<assign depth="0" id="5">
+			<value>
+				<index>
+					<value>
+						<index>
+							<value>arr</value>
+							<value>0</value>
+						</index>
+					</value>
+					<value>0</value>
+				</index>
+			</value>
+			<value>123</value>
+		</assign>
+		<call depth="0" id="6">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<index>
+						<value>
+							<index>
+								<value>arr</value>
+								<value>0</value>
+							</index>
+						</value>
+						<value>0</value>
+					</index>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

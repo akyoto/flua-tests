@@ -1,0 +1,183 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>playground.Everything</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">test1</string>
+			<string id="flua_string_1">test2</string>
+		</strings>
+	</header>
+	<code>
+		<const depth="0" id="1">
+			<assign depth="1" id="2">
+				<value>COUNT</value>
+				<value>
+					<multiply>
+						<value>
+							<multiply>
+								<value>1024</value>
+								<value>1024</value>
+							</multiply>
+						</value>
+						<value>2</value>
+					</multiply>
+				</value>
+			</assign>
+		</const>
+		<assign depth="0" id="3">
+			<value>mylist</value>
+			<value>
+				<new>
+					<type>
+						<template-call>
+							<value>Vector</value>
+							<value>Int</value>
+						</template-call>
+					</type>
+					<parameters>
+						<parameter>COUNT</parameter>
+					</parameters>
+				</new>
+			</value>
+		</assign>
+		<function depth="0" id="4">
+			<parameters>
+				<parameter>start</parameter>
+				<parameter>end</parameter>
+				<parameter>
+					<declare-type>
+						<value>l</value>
+						<value>
+							<template-call>
+								<value>Vector</value>
+								<value>Int</value>
+							</template-call>
+						</value>
+					</declare-type>
+				</parameter>
+			</parameters>
+			<name>doop</name>
+			<code>
+				<for depth="1" id="5">
+					<iterator>i</iterator>
+					<from>start</from>
+					<until>end</until>
+					<code>
+						<assign depth="2" id="6">
+							<value>
+								<index>
+									<value>l</value>
+									<value>i</value>
+								</index>
+							</value>
+							<value>
+								<add>
+									<value>
+										<index>
+											<value>l</value>
+											<value>i</value>
+										</index>
+									</value>
+									<value>1</value>
+								</add>
+							</value>
+						</assign>
+					</code>
+				</for>
+			</code>
+		</function>
+		<in depth="0" id="7">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_0</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<call depth="1" id="8">
+					<function>doop</function>
+					<parameters>
+						<parameter>0</parameter>
+						<parameter>COUNT</parameter>
+						<parameter>mylist</parameter>
+					</parameters>
+				</call>
+			</code>
+		</in>
+		<in depth="0" id="9">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_1</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<parallel depth="1" id="10">
+					<code>
+						<call depth="2" id="11">
+							<function>doop</function>
+							<parameters>
+								<parameter>0</parameter>
+								<parameter>
+									<divide>
+										<value>COUNT</value>
+										<value>3</value>
+									</divide>
+								</parameter>
+								<parameter>mylist</parameter>
+							</parameters>
+						</call>
+						<call depth="2" id="12">
+							<function>doop</function>
+							<parameters>
+								<parameter>
+									<divide>
+										<value>COUNT</value>
+										<value>3</value>
+									</divide>
+								</parameter>
+								<parameter>
+									<multiply>
+										<value>
+											<divide>
+												<value>COUNT</value>
+												<value>3</value>
+											</divide>
+										</value>
+										<value>2</value>
+									</multiply>
+								</parameter>
+								<parameter>mylist</parameter>
+							</parameters>
+						</call>
+						<call depth="2" id="13">
+							<function>doop</function>
+							<parameters>
+								<parameter>
+									<multiply>
+										<value>
+											<divide>
+												<value>COUNT</value>
+												<value>3</value>
+											</divide>
+										</value>
+										<value>2</value>
+									</multiply>
+								</parameter>
+								<parameter>COUNT</parameter>
+								<parameter>mylist</parameter>
+							</parameters>
+						</call>
+					</code>
+				</parallel>
+			</code>
+		</in>
+	</code>
+</module>

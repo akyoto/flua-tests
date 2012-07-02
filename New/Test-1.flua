@@ -1,0 +1,1041 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>playground.Everything</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">aaaa</string>
+			<string id="flua_string_1">/home/eduard/Projects/flua/src/flua/Documentation/7\S-\SGraphics/Textures/1-Tiles.png</string>
+		</strings>
+	</header>
+	<code>
+		<comment>\SCheck\Sbp.Documentation\Sin\Sthe\Smodule\Sbrowser\Son\Sthe\Sleft\Sfor\Ssome\Sbeginner\Stopics.</comment>
+		<assign depth="0" id="1">
+			<value>
+				<declare-type>
+					<value>WIDTH</value>
+					<value>Int</value>
+				</declare-type>
+			</value>
+			<value>640</value>
+		</assign>
+		<assign depth="0" id="2">
+			<value>
+				<declare-type>
+					<value>HEIGHT</value>
+					<value>Int</value>
+				</declare-type>
+			</value>
+			<value>480</value>
+		</assign>
+		<assign depth="0" id="3">
+			<value>win</value>
+			<value>
+				<new>
+					<type>GraphicsWindow</type>
+					<parameters>
+						<parameter>flua_string_0</parameter>
+						<parameter>WIDTH</parameter>
+						<parameter>HEIGHT</parameter>
+					</parameters>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="4">
+			<function>setupGL</function>
+			<parameters/>
+		</call>
+		<assign depth="0" id="5">
+			<value>sprite</value>
+			<value>
+				<new>
+					<type>Sprite</type>
+					<parameters>
+						<parameter>flua_string_1</parameter>
+					</parameters>
+				</new>
+			</value>
+		</assign>
+		<foreach depth="0" id="6">
+			<iterator>frame</iterator>
+			<collection>
+				<access>
+					<value>win</value>
+					<value>frames</value>
+				</access>
+			</collection>
+			<code>
+				<call depth="1" id="7">
+					<function>glColor3f</function>
+					<parameters>
+						<parameter>1.0</parameter>
+						<parameter>1.0</parameter>
+						<parameter>1.0</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="8">
+					<function>drawSprite</function>
+					<parameters>
+						<parameter>
+							<subtract>
+								<value>
+									<call>
+										<function>getMouseX</function>
+										<parameters/>
+									</call>
+								</value>
+								<value>
+									<divide>
+										<value>
+											<access>
+												<value>sprite</value>
+												<value>width</value>
+											</access>
+										</value>
+										<value>2</value>
+									</divide>
+								</value>
+							</subtract>
+						</parameter>
+						<parameter>
+							<subtract>
+								<value>
+									<call>
+										<function>getMouseY</function>
+										<parameters/>
+									</call>
+								</value>
+								<value>
+									<divide>
+										<value>
+											<access>
+												<value>sprite</value>
+												<value>height</value>
+											</access>
+										</value>
+										<value>2</value>
+									</divide>
+								</value>
+							</subtract>
+						</parameter>
+						<parameter>sprite</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+		<comment>\Ssprite\Sinfo\Sneeds\Sto\Sbe\Sin\Ssome\Skind\Sof\Scontainer,\Strying\Sto\Suse\Sa\Sclass\Sjust\Smakes\Sme\Srage\Safter\Sa\Swhile\Sfrom\Sall\Sthe\Serrors</comment>
+		<comment>\Smaybe\Syou\Smight\Shave\Sbetter\Sluck</comment>
+		<comment>\S-------------------------------------------------------------------------------------------------------------------</comment>
+		<function depth="0" id="9">
+			<parameters>
+				<parameter>x</parameter>
+				<parameter>y</parameter>
+				<parameter>
+					<declare-type>
+						<value>s</value>
+						<value>Sprite</value>
+					</declare-type>
+				</parameter>
+			</parameters>
+			<name>drawSprite</name>
+			<code>
+				<assign depth="1" id="10">
+					<value>
+						<declare-type>
+							<value>x1</value>
+							<value>Float</value>
+						</declare-type>
+					</value>
+					<value>
+						<negative>
+							<value>
+								<access>
+									<value>s</value>
+									<value>handleX</value>
+								</access>
+							</value>
+						</negative>
+					</value>
+				</assign>
+				<assign depth="1" id="11">
+					<value>
+						<declare-type>
+							<value>y1</value>
+							<value>Float</value>
+						</declare-type>
+					</value>
+					<value>
+						<negative>
+							<value>
+								<access>
+									<value>s</value>
+									<value>handleY</value>
+								</access>
+							</value>
+						</negative>
+					</value>
+				</assign>
+				<if-block depth="1" id="12">
+					<if>
+						<condition>
+							<or>
+								<value>
+									<greater>
+										<value>
+											<access>
+												<value>s</value>
+												<value>handleX</value>
+											</access>
+										</value>
+										<value>0</value>
+									</greater>
+								</value>
+								<value>
+									<greater>
+										<value>
+											<access>
+												<value>s</value>
+												<value>handleY</value>
+											</access>
+										</value>
+										<value>0</value>
+									</greater>
+								</value>
+							</or>
+						</condition>
+						<code>
+							<assign depth="2" id="13">
+								<value>x2</value>
+								<value>
+									<access>
+										<value>s</value>
+										<value>handleX</value>
+									</access>
+								</value>
+							</assign>
+							<assign depth="2" id="14">
+								<value>y2</value>
+								<value>
+									<access>
+										<value>s</value>
+										<value>handleY</value>
+									</access>
+								</value>
+							</assign>
+						</code>
+					</if>
+					<else depth="1" id="15">
+						<code>
+							<assign depth="2" id="16">
+								<value>x2</value>
+								<value>
+									<access>
+										<value>s</value>
+										<value>width</value>
+									</access>
+								</value>
+							</assign>
+							<assign depth="2" id="17">
+								<value>y2</value>
+								<value>
+									<access>
+										<value>s</value>
+										<value>width</value>
+									</access>
+								</value>
+							</assign>
+						</code>
+					</else>
+				</if-block>
+				<call depth="1" id="18">
+					<function>glBindTexture</function>
+					<parameters>
+						<parameter>GL_TEXTURE_2D</parameter>
+						<parameter>
+							<access>
+								<value>sprite</value>
+								<value>textureID</value>
+							</access>
+						</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="19">
+					<function>glPushMatrix</function>
+					<parameters/>
+				</call>
+				<call depth="1" id="20">
+					<function>glTranslatef</function>
+					<parameters>
+						<parameter>x</parameter>
+						<parameter>y</parameter>
+						<parameter>0</parameter>
+					</parameters>
+				</call>
+				<comment>glScalef(scaleX,scaleY,1.0)</comment>
+				<comment>glRotatef\Srotation,\S0,\S0,\S1</comment>
+				<call depth="1" id="21">
+					<function>glBegin</function>
+					<parameters>
+						<parameter>GL_QUADS</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="22">
+					<function>glTexCoord2f</function>
+					<parameters>
+						<parameter>
+							<access>
+								<value>s</value>
+								<value>u_off</value>
+							</access>
+						</parameter>
+						<parameter>
+							<access>
+								<value>s</value>
+								<value>v_off</value>
+							</access>
+						</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="23">
+					<function>glVertex2i</function>
+					<parameters>
+						<parameter>x1</parameter>
+						<parameter>y1</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="24">
+					<function>glTexCoord2f</function>
+					<parameters>
+						<parameter>
+							<access>
+								<value>s</value>
+								<value>u_off</value>
+							</access>
+						</parameter>
+						<parameter>
+							<add>
+								<value>
+									<access>
+										<value>s</value>
+										<value>v_off</value>
+									</access>
+								</value>
+								<value>
+									<access>
+										<value>s</value>
+										<value>v_height</value>
+									</access>
+								</value>
+							</add>
+						</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="25">
+					<function>glVertex2i</function>
+					<parameters>
+						<parameter>x1</parameter>
+						<parameter>y2</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="26">
+					<function>glTexCoord2f</function>
+					<parameters>
+						<parameter>
+							<add>
+								<value>
+									<access>
+										<value>s</value>
+										<value>u_off</value>
+									</access>
+								</value>
+								<value>
+									<access>
+										<value>s</value>
+										<value>u_width</value>
+									</access>
+								</value>
+							</add>
+						</parameter>
+						<parameter>
+							<add>
+								<value>
+									<access>
+										<value>s</value>
+										<value>v_off</value>
+									</access>
+								</value>
+								<value>
+									<access>
+										<value>s</value>
+										<value>v_height</value>
+									</access>
+								</value>
+							</add>
+						</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="27">
+					<function>glVertex2i</function>
+					<parameters>
+						<parameter>x2</parameter>
+						<parameter>y2</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="28">
+					<function>glTexCoord2f</function>
+					<parameters>
+						<parameter>
+							<add>
+								<value>
+									<access>
+										<value>s</value>
+										<value>u_off</value>
+									</access>
+								</value>
+								<value>
+									<access>
+										<value>s</value>
+										<value>u_width</value>
+									</access>
+								</value>
+							</add>
+						</parameter>
+						<parameter>
+							<access>
+								<value>s</value>
+								<value>v_off</value>
+							</access>
+						</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="29">
+					<function>glVertex2i</function>
+					<parameters>
+						<parameter>x2</parameter>
+						<parameter>y1</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="30">
+					<function>glEnd</function>
+					<parameters/>
+				</call>
+				<call depth="1" id="31">
+					<function>glPopMatrix</function>
+					<parameters/>
+				</call>
+			</code>
+		</function>
+		<comment>\S-------------------------------------------------------------------------------------------------------------------</comment>
+		<class depth="0" id="32">
+			<name>Sprite</name>
+			<code>
+				<extends depth="1" id="33">
+					<extends-class depth="2" id="34">Texture</extends-class>
+				</extends>
+				<function depth="1" id="35">
+					<parameters>
+						<parameter>
+							<access>
+								<value>my</value>
+								<value>texName</value>
+							</access>
+						</parameter>
+					</parameters>
+					<name>init</name>
+					<code>
+						<on depth="2" id="36">
+							<expression>my</expression>
+							<code>
+								<comment>''\Swidth-1\Sof\Sthe\Ssprite</comment>
+								<assign depth="3" id="37">
+									<value>
+										<declare-type>
+											<value>width</value>
+											<value>Int</value>
+										</declare-type>
+									</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="38">
+									<value>
+										<declare-type>
+											<value>height</value>
+											<value>Int</value>
+										</declare-type>
+									</value>
+									<value>0</value>
+								</assign>
+								<comment>''\Stexture\Satlas\Soffset</comment>
+								<assign depth="3" id="39">
+									<value>
+										<declare-type>
+											<value>u_off</value>
+											<value>Float</value>
+										</declare-type>
+									</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="40">
+									<value>
+										<declare-type>
+											<value>v_off</value>
+											<value>Float</value>
+										</declare-type>
+									</value>
+									<value>0</value>
+								</assign>
+								<comment>''\Swidth\Sin\Stexture\Sspace</comment>
+								<assign depth="3" id="41">
+									<value>
+										<declare-type>
+											<value>u_width</value>
+											<value>Float</value>
+										</declare-type>
+									</value>
+									<value>1.0</value>
+								</assign>
+								<assign depth="3" id="42">
+									<value>
+										<declare-type>
+											<value>v_height</value>
+											<value>Float</value>
+										</declare-type>
+									</value>
+									<value>1.0</value>
+								</assign>
+								<comment>''\Stexture\SID\Sfor\Sspeed\Sand\Sease\Sof\Sinterface</comment>
+								<declare-type depth="3" id="43">
+									<value>textureID</value>
+									<value>Int</value>
+								</declare-type>
+								<comment>''\Soriginal\Stextr\Ssize</comment>
+								<assign depth="3" id="44">
+									<value>
+										<declare-type>
+											<value>texW</value>
+											<value>Int</value>
+										</declare-type>
+									</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="45">
+									<value>
+										<declare-type>
+											<value>texH</value>
+											<value>Int</value>
+										</declare-type>
+									</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="46">
+									<value>
+										<declare-type>
+											<value>handleX</value>
+											<value>Int</value>
+										</declare-type>
+									</value>
+									<value>0</value>
+								</assign>
+								<assign depth="3" id="47">
+									<value>
+										<declare-type>
+											<value>handleY</value>
+											<value>Int</value>
+										</declare-type>
+									</value>
+									<value>0</value>
+								</assign>
+							</code>
+						</on>
+						<comment>\Sload</comment>
+						<call depth="2" id="48">
+							<function>
+								<access>
+									<value>Texture</value>
+									<value>init</value>
+								</access>
+							</function>
+							<parameters>
+								<parameter>
+									<access>
+										<value>my</value>
+										<value>texName</value>
+									</access>
+								</parameter>
+							</parameters>
+						</call>
+						<assign depth="2" id="49">
+							<value>
+								<access>
+									<value>my</value>
+									<value>textureID</value>
+								</access>
+							</value>
+							<value>
+								<access>
+									<value>my</value>
+									<value>handle</value>
+								</access>
+							</value>
+						</assign>
+					</code>
+				</function>
+				<public depth="1" id="50">
+					<public-member depth="2" id="51">*</public-member>
+				</public>
+			</code>
+		</class>
+		<comment>\S-------------------------------------------------------------------------------------------------------------------</comment>
+		<function depth="0" id="52">
+			<parameters>
+				<parameter>x1</parameter>
+				<parameter>y1</parameter>
+				<parameter>x2</parameter>
+				<parameter>y2</parameter>
+				<parameter>
+					<assign>
+						<value>filled</value>
+						<value>true</value>
+					</assign>
+				</parameter>
+			</parameters>
+			<name>drawRect</name>
+			<code>
+				<call depth="1" id="53">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_TEXTURE_2D</parameter>
+					</parameters>
+				</call>
+				<if-block depth="1" id="54">
+					<if>
+						<condition>filled</condition>
+						<code>
+							<call depth="2" id="55">
+								<function>glBegin</function>
+								<parameters>
+									<parameter>GL_QUADS</parameter>
+								</parameters>
+							</call>
+						</code>
+					</if>
+					<else depth="1" id="56">
+						<code>
+							<call depth="2" id="57">
+								<function>glBegin</function>
+								<parameters>
+									<parameter>GL_LINE_STRIP</parameter>
+								</parameters>
+							</call>
+						</code>
+					</else>
+				</if-block>
+				<call depth="1" id="58">
+					<function>glVertex2i</function>
+					<parameters>
+						<parameter>x1</parameter>
+						<parameter>y1</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="59">
+					<function>glVertex2i</function>
+					<parameters>
+						<parameter>x1</parameter>
+						<parameter>y2</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="60">
+					<function>glVertex2i</function>
+					<parameters>
+						<parameter>x2</parameter>
+						<parameter>y2</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="61">
+					<function>glVertex2i</function>
+					<parameters>
+						<parameter>x2</parameter>
+						<parameter>y1</parameter>
+					</parameters>
+				</call>
+				<if-block depth="1" id="62">
+					<if>
+						<condition>
+							<not>
+								<value>filled</value>
+							</not>
+						</condition>
+						<code>
+							<call depth="2" id="63">
+								<function>glVertex2i</function>
+								<parameters>
+									<parameter>x1</parameter>
+									<parameter>y1</parameter>
+								</parameters>
+							</call>
+						</code>
+					</if>
+				</if-block>
+				<call depth="1" id="64">
+					<function>glEnd</function>
+					<parameters/>
+				</call>
+				<call depth="1" id="65">
+					<function>glEnable</function>
+					<parameters>
+						<parameter>GL_TEXTURE_2D</parameter>
+					</parameters>
+				</call>
+			</code>
+		</function>
+		<comment>\S-------------------------------------------------------------------------------------------------------------------</comment>
+		<comment>\S-------------------------------------------------------------------------------------------------------------------</comment>
+		<function depth="0" id="66">
+			<name>setupGL</name>
+			<code>
+				<comment>\SOpenGL\Sparams\Sfor\Sgluerspective</comment>
+				<comment>\SField\Sof\Sview\Sangle\Sin\SY</comment>
+				<assign depth="1" id="67">
+					<value>
+						<declare-type>
+							<value>FOVy</value>
+							<value>Float64</value>
+						</declare-type>
+					</value>
+					<value>0.0</value>
+				</assign>
+				<comment>\SAspect\Sof\Sscreen</comment>
+				<assign depth="1" id="68">
+					<value>
+						<declare-type>
+							<value>aspect</value>
+							<value>Float64</value>
+						</declare-type>
+					</value>
+					<value>0.0</value>
+				</assign>
+				<comment>\Sz-near\Sclip\Sdistance</comment>
+				<assign depth="1" id="69">
+					<value>
+						<declare-type>
+							<value>znear</value>
+							<value>Float64</value>
+						</declare-type>
+					</value>
+					<value>0.0</value>
+				</assign>
+				<comment>\Sz-far\Sclip\Sdistance</comment>
+				<assign depth="1" id="70">
+					<value>
+						<declare-type>
+							<value>zfar</value>
+							<value>Float64</value>
+						</declare-type>
+					</value>
+					<value>0.0</value>
+				</assign>
+				<comment>\Susing\Sscreen\Sinfo\Sw\Sand\Sh\Sas\Sparams</comment>
+				<call depth="1" id="71">
+					<function>glViewport</function>
+					<parameters>
+						<parameter>0</parameter>
+						<parameter>0</parameter>
+						<parameter>WIDTH</parameter>
+						<parameter>HEIGHT</parameter>
+					</parameters>
+				</call>
+				<comment>\SSet\Scurrent\SMode\Sto\Sprojection(ie:\S3d)</comment>
+				<call depth="1" id="72">
+					<function>glMatrixMode</function>
+					<parameters>
+						<parameter>GL_PROJECTION</parameter>
+					</parameters>
+				</call>
+				<comment>\SLoad\Sidentity\Smatrix\Sto\Sprojection\Smatrix</comment>
+				<call depth="1" id="73">
+					<function>glLoadIdentity</function>
+					<parameters/>
+				</call>
+				<comment>\SSet\SgluPerspective\Sparams</comment>
+				<comment>\S45\Sdeg\Sfovy</comment>
+				<assign depth="1" id="74">
+					<value>FOVy</value>
+					<value>
+						<divide>
+							<value>90.0</value>
+							<value>2.0</value>
+						</divide>
+					</value>
+				</assign>
+				<assign depth="1" id="75">
+					<value>Aspect</value>
+					<value>
+						<divide>
+							<value>WIDTH</value>
+							<value>HEIGHT</value>
+						</divide>
+					</value>
+				</assign>
+				<comment>\SNear\Sclip</comment>
+				<assign depth="1" id="76">
+					<value>znear</value>
+					<value>1</value>
+				</assign>
+				<comment>\Sfar\Sclip</comment>
+				<assign depth="1" id="77">
+					<value>zfar</value>
+					<value>500</value>
+				</assign>
+				<comment>\Suse\Sglu\SPerspective\Sto\Sset\Sour\S3d\Sfrustum\Sdimension\Sup</comment>
+				<call depth="1" id="78">
+					<function>gluPerspective</function>
+					<parameters>
+						<parameter>FOVy</parameter>
+						<parameter>aspect</parameter>
+						<parameter>znear</parameter>
+						<parameter>zfar</parameter>
+					</parameters>
+				</call>
+				<comment>\SModelview\Smode</comment>
+				<comment>\Sie.\SMatrix\Sthat\Sdoes\Sthings\Sto\Sanything\Swe\Sdraw</comment>
+				<comment>\Sas\Sin\Slines,\Spoints,\Stris,\Setc.</comment>
+				<call depth="1" id="79">
+					<function>glMatrixMode</function>
+					<parameters>
+						<parameter>GL_MODELVIEW</parameter>
+					</parameters>
+				</call>
+				<comment>\Sload\Sidentity(clean)\Smatrix\Sto\Smodelview</comment>
+				<call depth="1" id="80">
+					<function>glLoadIdentity</function>
+					<parameters/>
+				</call>
+				<comment>\Sset\Sshading\Sto\Ssmooth(try\SGL_FLAT)</comment>
+				<call depth="1" id="81">
+					<function>glShadeModel</function>
+					<parameters>
+						<parameter>GL_SMOOTH</parameter>
+					</parameters>
+				</call>
+				<comment>\Sset\SClear\Scolor\Sto\SBLACK</comment>
+				<call depth="1" id="82">
+					<function>glClearColor</function>
+					<parameters>
+						<parameter>0.0</parameter>
+						<parameter>0.0</parameter>
+						<parameter>0.0</parameter>
+						<parameter>1.0</parameter>
+					</parameters>
+				</call>
+				<comment>\SSet\SDepth\Sbuffer\Sto\S1(z-Buffer)</comment>
+				<call depth="1" id="83">
+					<function>glClearDepth</function>
+					<parameters>
+						<parameter>1.0</parameter>
+					</parameters>
+				</call>
+				<comment>\SDisable\SDepth\STesting\Sso\Sthat\Sour\Sz-buffer\Sworks</comment>
+				<call depth="1" id="84">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_DEPTH_TEST</parameter>
+					</parameters>
+				</call>
+				<comment>\Scompare\Seach\Sincoming\Spixel\Sz\Svalue\Swith\Sthe\Sz\Svalue\Spresent\Sin\Sthe\Sdepth\Sbuffer</comment>
+				<comment>\SLEQUAL\Smeans\Sthan\Spixel\Sis\Sdrawn\Sif\Sthe\Sincoming\Sz\Svalue\Sis\Sless\Sthan</comment>
+				<comment>\Sor\Sequal\Sto\Sthe\Sstored\Sz\Svalue</comment>
+				<call depth="1" id="85">
+					<function>glDepthFunc</function>
+					<parameters>
+						<parameter>GL_LEQUAL</parameter>
+					</parameters>
+				</call>
+				<comment>\Shave\Sone\Sor\Smore\Smaterial\Sparameters\Strack\Sthe\Scurrent\Scolor</comment>
+				<comment>\SMaterial\Sis\Syour\S3d\Smodel</comment>
+				<call depth="1" id="86">
+					<function>glEnable</function>
+					<parameters>
+						<parameter>GL_COLOR_MATERIAL</parameter>
+					</parameters>
+				</call>
+				<comment>\SEnable\STexturing</comment>
+				<call depth="1" id="87">
+					<function>glEnable</function>
+					<parameters>
+						<parameter>GL_TEXTURE_2D</parameter>
+					</parameters>
+				</call>
+				<comment>\STell\SopenGL\Sthat\Swe\Swant\Sthe\Sbest\Spossible\Sperspective\Stransform</comment>
+				<call depth="1" id="88">
+					<function>glHint</function>
+					<parameters>
+						<parameter>GL_PERSPECTIVE_CORRECTION_HINT</parameter>
+						<parameter>GL_NICEST</parameter>
+					</parameters>
+				</call>
+				<comment>\SDisable\SBackface\Sculling</comment>
+				<call depth="1" id="89">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_CULL_FACE</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="90">
+					<function>glPolygonMode</function>
+					<parameters>
+						<parameter>GL_FRONT</parameter>
+						<parameter>GL_FILL</parameter>
+					</parameters>
+				</call>
+				<comment>\S#\S\Senable\Sblending\Sfor\Stransparency</comment>
+				<call depth="1" id="91">
+					<function>glEnable</function>
+					<parameters>
+						<parameter>GL_BLEND</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="92">
+					<function>glBlendFunc</function>
+					<parameters>
+						<parameter>GL_SRC_ALPHA</parameter>
+						<parameter>GL_ONE_MINUS_SRC_ALPHA</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="93">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_DEPTH_TEST</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="94">
+					<function>glEnable</function>
+					<parameters>
+						<parameter>GL_ALPHA_TEST</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="95">
+					<function>glAlphaFunc</function>
+					<parameters>
+						<parameter>GL_GREATER</parameter>
+						<parameter>0</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="96">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_STENCIL_TEST</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="97">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_TEXTURE_1D</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="98">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_LIGHTING</parameter>
+					</parameters>
+				</call>
+				<comment>\S\TglDisable(GL_LOGIC_OP)\S#\S?</comment>
+				<call depth="1" id="99">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_DITHER</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="100">
+					<function>glDisable</function>
+					<parameters>
+						<parameter>GL_FOG</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="101">
+					<function>glHint</function>
+					<parameters>
+						<parameter>GL_POINT_SMOOTH_HINT</parameter>
+						<parameter>GL_FASTEST</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="102">
+					<function>glHint</function>
+					<parameters>
+						<parameter>GL_LINE_SMOOTH_HINT</parameter>
+						<parameter>GL_FASTEST</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="103">
+					<function>glPointSize</function>
+					<parameters>
+						<parameter>1</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="104">
+					<function>glLineWidth</function>
+					<parameters>
+						<parameter>1</parameter>
+					</parameters>
+				</call>
+				<comment>\S#\S\Sset\Sup\Sthe\Sfont\Ssystem</comment>
+				<comment>\S\Tfont_init()</comment>
+				<comment>start_2d(screen_wid,\Sscreen_hei)</comment>
+				<call depth="1" id="105">
+					<function>glMatrixMode</function>
+					<parameters>
+						<parameter>GL_PROJECTION</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="106">
+					<function>glPushMatrix</function>
+					<parameters/>
+				</call>
+				<call depth="1" id="107">
+					<function>glLoadIdentity</function>
+					<parameters/>
+				</call>
+				<call depth="1" id="108">
+					<function>glOrtho</function>
+					<parameters>
+						<parameter>0</parameter>
+						<parameter>WIDTH</parameter>
+						<parameter>HEIGHT</parameter>
+						<parameter>0</parameter>
+						<parameter>
+							<negative>
+								<value>1</value>
+							</negative>
+						</parameter>
+						<parameter>1</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="109">
+					<function>glMatrixMode</function>
+					<parameters>
+						<parameter>GL_MODELVIEW</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="110">
+					<function>glPushMatrix</function>
+					<parameters/>
+				</call>
+				<call depth="1" id="111">
+					<function>glLoadIdentity</function>
+					<parameters/>
+				</call>
+				<comment>#\Smagic\Strick</comment>
+				<call depth="1" id="112">
+					<function>glTranslatef</function>
+					<parameters>
+						<parameter>0.375</parameter>
+						<parameter>0.375</parameter>
+						<parameter>0</parameter>
+					</parameters>
+				</call>
+			</code>
+		</function>
+		<comment>\S-------------------------------------------------------------------------------------------------------------------</comment>
+	</code>
+</module>

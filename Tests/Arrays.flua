@@ -1,0 +1,65 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.Collection</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>arr</value>
+			<value>
+				<new>
+					<type>
+						<template-call>
+							<value>Array</value>
+							<value>
+								<template-call>
+									<value>Array</value>
+									<value>Int</value>
+								</template-call>
+							</value>
+						</template-call>
+					</type>
+					<parameters>
+						<parameter>16</parameter>
+					</parameters>
+				</new>
+			</value>
+		</assign>
+		<foreach depth="0" id="2">
+			<iterator>x</iterator>
+			<collection>
+				<access>
+					<value>arr</value>
+					<value>length</value>
+				</access>
+			</collection>
+			<code>
+				<assign depth="1" id="3">
+					<value>
+						<index>
+							<value>arr</value>
+							<value>x</value>
+						</index>
+					</value>
+					<value>
+						<new>
+							<type>
+								<template-call>
+									<value>Array</value>
+									<value>Int</value>
+								</template-call>
+							</type>
+							<parameters>
+								<parameter>16</parameter>
+							</parameters>
+						</new>
+					</value>
+				</assign>
+			</code>
+		</foreach>
+	</code>
+</module>
