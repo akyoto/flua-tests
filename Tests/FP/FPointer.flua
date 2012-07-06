@@ -1,0 +1,38 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<function depth="0" id="1">
+			<parameters>
+				<parameter>x</parameter>
+				<parameter>y</parameter>
+			</parameters>
+			<name>sum</name>
+			<code>
+				<return depth="1" id="2">
+					<add>
+						<value>x</value>
+						<value>y</value>
+					</add>
+				</return>
+			</code>
+			<meta/>
+		</function>
+		<assign depth="0" id="3">
+			<value>a</value>
+			<value>sum</value>
+		</assign>
+		<call depth="0" id="4">
+			<function>sum</function>
+			<parameters>
+				<parameter>3</parameter>
+				<parameter>4</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

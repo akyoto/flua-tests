@@ -1,0 +1,85 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.Math.Geometry</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">hello</string>
+		</strings>
+	</header>
+	<code>
+		<call depth="0" id="1">
+			<function>print</function>
+			<parameters>
+				<parameter>flua_string_0</parameter>
+			</parameters>
+		</call>
+		<new depth="0" id="2">
+			<type>MyClass</type>
+			<parameters/>
+		</new>
+		<class depth="0" id="3">
+			<name>MyClass</name>
+			<code>
+				<public depth="1" id="4">
+					<noop depth="2" id="5"/>
+				</public>
+				<function depth="1" id="6">
+					<name>init</name>
+					<code>
+						<assign depth="2" id="7">
+							<value>x</value>
+							<value>
+								<call>
+									<function>cos</function>
+									<parameters>
+										<parameter>
+											<subtract>
+												<value>
+													<call>
+														<function>sin</function>
+														<parameters>
+															<parameter>
+																<divide>
+																	<value>
+																		<multiply>
+																			<value>45</value>
+																			<value>45</value>
+																		</multiply>
+																	</value>
+																	<value>3.5</value>
+																</divide>
+															</parameter>
+														</parameters>
+													</call>
+												</value>
+												<value>
+													<call>
+														<function>cos</function>
+														<parameters>
+															<parameter>45</parameter>
+														</parameters>
+													</call>
+												</value>
+											</subtract>
+										</parameter>
+									</parameters>
+								</call>
+							</value>
+						</assign>
+					</code>
+					<meta/>
+				</function>
+			</code>
+			<meta/>
+		</class>
+		<comment>\SMyClass()</comment>
+		<comment>\SMyClass</comment>
+		<comment>\S\Tpublic</comment>
+		<comment>\S\T\T...</comment>
+		<comment>\S\Tinit</comment>
+		<comment>\S\T\T...</comment>
+	</code>
+</module>

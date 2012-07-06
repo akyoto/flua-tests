@@ -1,0 +1,165 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.Collection.Map</import>
+			<import>flua.Utils</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">Allocation</string>
+			<string id="flua_string_1">Set-index</string>
+			<string id="flua_string_2">Lookup</string>
+			<string id="flua_string_3">n:\S</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>n</value>
+			<value>1000000</value>
+		</assign>
+		<in depth="0" id="2">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_0</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<assign depth="1" id="3">
+					<value>abc</value>
+					<value>
+						<new>
+							<type>
+								<template-call>
+									<value>Map</value>
+									<value>
+										<parameters>
+											<parameter>String</parameter>
+											<parameter>Int</parameter>
+										</parameters>
+									</value>
+								</template-call>
+							</type>
+							<parameters>
+								<parameter>n</parameter>
+							</parameters>
+						</new>
+					</value>
+				</assign>
+			</code>
+		</in>
+		<in depth="0" id="4">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_1</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<for depth="1" id="5">
+					<iterator>i</iterator>
+					<from>1</from>
+					<to>n</to>
+					<code>
+						<assign depth="2" id="6">
+							<value>
+								<index>
+									<value>abc</value>
+									<value>
+										<new>
+											<type>String</type>
+											<parameters>
+												<parameter>i</parameter>
+											</parameters>
+										</new>
+									</value>
+								</index>
+							</value>
+							<value>i</value>
+						</assign>
+					</code>
+					<meta/>
+				</for>
+			</code>
+		</in>
+		<assign depth="0" id="7">
+			<value>d</value>
+			<value>0</value>
+		</assign>
+		<in depth="0" id="8">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_2</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<for depth="1" id="9">
+					<iterator>i</iterator>
+					<from>1</from>
+					<to>n</to>
+					<code>
+						<assign depth="2" id="10">
+							<value>tmp</value>
+							<value>
+								<new>
+									<type>String</type>
+									<parameters>
+										<parameter>i</parameter>
+									</parameters>
+								</new>
+							</value>
+						</assign>
+						<if-block depth="2" id="11">
+							<if>
+								<condition>
+									<not-equal>
+										<value>i</value>
+										<value>
+											<index>
+												<value>abc</value>
+												<value>tmp</value>
+											</index>
+										</value>
+									</not-equal>
+								</condition>
+								<code>
+									<call depth="3" id="12">
+										<function>print</function>
+										<parameters>
+											<parameter>
+												<index>
+													<value>abc</value>
+													<value>tmp</value>
+												</index>
+											</parameter>
+										</parameters>
+									</call>
+								</code>
+							</if>
+						</if-block>
+					</code>
+					<meta/>
+				</for>
+			</code>
+		</in>
+		<call depth="0" id="13">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<add>
+						<value>flua_string_3</value>
+						<value>n</value>
+					</add>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

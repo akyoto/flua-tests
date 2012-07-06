@@ -1,0 +1,71 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.FileSystem</import>
+			<import>flua.Utils</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">Iterate\Sover\Slines</string>
+			<string id="flua_string_1">flua_decls.hpp</string>
+			<string id="flua_string_2">:\S</string>
+		</strings>
+	</header>
+	<code>
+		<in depth="0" id="1">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_0</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<foreach depth="1" id="2">
+					<counter>number</counter>
+					<iterator>line</iterator>
+					<collection>
+						<access>
+							<value>
+								<call>
+									<function>readFile</function>
+									<parameters>
+										<parameter>flua_string_1</parameter>
+									</parameters>
+								</call>
+							</value>
+							<value>lines</value>
+						</access>
+					</collection>
+					<code>
+						<call depth="2" id="3">
+							<function>print</function>
+							<parameters>
+								<parameter>
+									<add>
+										<value>
+											<add>
+												<value>
+													<new>
+														<type>String</type>
+														<parameters>
+															<parameter>number</parameter>
+														</parameters>
+													</new>
+												</value>
+												<value>flua_string_2</value>
+											</add>
+										</value>
+										<value>line</value>
+									</add>
+								</parameter>
+							</parameters>
+						</call>
+					</code>
+				</foreach>
+			</code>
+		</in>
+	</code>
+</module>

@@ -1,4 +1,4 @@
 eurbach
 =======
 
-My bp projects. Mostly tests and some other stuff.
+My Flua projects. Mostly tests and some other stuff.

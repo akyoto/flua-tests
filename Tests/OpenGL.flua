@@ -5,6 +5,7 @@
 			<import>flua.Core</import>
 			<import>flua.Graphics</import>
 			<import>flua.Math.Geometry</import>
+			<import>flua.Utils.Time</import>
 		</dependencies>
 		<strings>
 			<string id="flua_string_0">Flua\S-\SRing\Sof\Scubes</string>
@@ -307,167 +308,148 @@
 							</parameters>
 						</call>
 						<comment>\SColor\Sfor\Sthe\Smaterial\Sof\Sthe\Scube</comment>
-						<assign depth="2" id="23">
-							<value>color</value>
-							<value>
+						<on depth="2" id="23">
+							<expression>
 								<access>
 									<value>mat</value>
 									<value>color</value>
 								</access>
-							</value>
-						</assign>
-						<assign depth="2" id="24">
-							<value>
-								<access>
-									<value>color</value>
+							</expression>
+							<code>
+								<assign depth="3" id="24">
 									<value>red</value>
-								</access>
-							</value>
-							<value>
-								<call>
-									<function>abs</function>
-									<parameters>
-										<parameter>
-											<call>
-												<function>sin</function>
-												<parameters>
-													<parameter>
-														<add>
-															<value>
-																<multiply>
+									<value>
+										<call>
+											<function>abs</function>
+											<parameters>
+												<parameter>
+													<call>
+														<function>sin</function>
+														<parameters>
+															<parameter>
+																<add>
 																	<value>
-																		<call>
-																			<function>systemTime</function>
-																			<parameters/>
-																		</call>
+																		<multiply>
+																			<value>
+																				<call>
+																					<function>getAppTime</function>
+																					<parameters/>
+																				</call>
+																			</value>
+																			<value>0.0005</value>
+																		</multiply>
 																	</value>
-																	<value>0.0005</value>
-																</multiply>
-															</value>
-															<value>1</value>
-														</add>
-													</parameter>
-												</parameters>
-											</call>
-										</parameter>
-									</parameters>
-								</call>
-							</value>
-						</assign>
-						<assign depth="2" id="25">
-							<value>
-								<access>
-									<value>color</value>
+																	<value>1</value>
+																</add>
+															</parameter>
+														</parameters>
+													</call>
+												</parameter>
+											</parameters>
+										</call>
+									</value>
+								</assign>
+								<assign depth="3" id="25">
 									<value>green</value>
-								</access>
-							</value>
-							<value>
-								<call>
-									<function>abs</function>
-									<parameters>
-										<parameter>
-											<call>
-												<function>sin</function>
-												<parameters>
-													<parameter>
-														<add>
-															<value>
-																<multiply>
+									<value>
+										<call>
+											<function>abs</function>
+											<parameters>
+												<parameter>
+													<call>
+														<function>sin</function>
+														<parameters>
+															<parameter>
+																<add>
 																	<value>
-																		<call>
-																			<function>systemTime</function>
-																			<parameters/>
-																		</call>
+																		<multiply>
+																			<value>
+																				<call>
+																					<function>getAppTime</function>
+																					<parameters/>
+																				</call>
+																			</value>
+																			<value>0.0005</value>
+																		</multiply>
 																	</value>
-																	<value>0.0005</value>
-																</multiply>
-															</value>
-															<value>2</value>
-														</add>
-													</parameter>
-												</parameters>
-											</call>
-										</parameter>
-									</parameters>
-								</call>
-							</value>
-						</assign>
-						<assign depth="2" id="26">
-							<value>
-								<access>
-									<value>color</value>
+																	<value>2</value>
+																</add>
+															</parameter>
+														</parameters>
+													</call>
+												</parameter>
+											</parameters>
+										</call>
+									</value>
+								</assign>
+								<assign depth="3" id="26">
 									<value>blue</value>
-								</access>
-							</value>
-							<value>
-								<call>
-									<function>abs</function>
-									<parameters>
-										<parameter>
-											<call>
-												<function>sin</function>
-												<parameters>
-													<parameter>
-														<add>
-															<value>
-																<multiply>
+									<value>
+										<call>
+											<function>abs</function>
+											<parameters>
+												<parameter>
+													<call>
+														<function>sin</function>
+														<parameters>
+															<parameter>
+																<add>
 																	<value>
-																		<call>
-																			<function>systemTime</function>
-																			<parameters/>
-																		</call>
+																		<multiply>
+																			<value>
+																				<call>
+																					<function>getAppTime</function>
+																					<parameters/>
+																				</call>
+																			</value>
+																			<value>0.0005</value>
+																		</multiply>
 																	</value>
-																	<value>0.0005</value>
-																</multiply>
-															</value>
-															<value>3</value>
-														</add>
-													</parameter>
-												</parameters>
-											</call>
-										</parameter>
-									</parameters>
-								</call>
-							</value>
-						</assign>
-						<assign depth="2" id="27">
-							<value>
-								<access>
-									<value>color</value>
+																	<value>3</value>
+																</add>
+															</parameter>
+														</parameters>
+													</call>
+												</parameter>
+											</parameters>
+										</call>
+									</value>
+								</assign>
+								<assign depth="3" id="27">
 									<value>alpha</value>
-								</access>
-							</value>
-							<value>
-								<call>
-									<function>abs</function>
-									<parameters>
-										<parameter>
-											<call>
-												<function>sin</function>
-												<parameters>
-													<parameter>
-														<add>
-															<value>
-																<multiply>
+									<value>
+										<call>
+											<function>abs</function>
+											<parameters>
+												<parameter>
+													<call>
+														<function>sin</function>
+														<parameters>
+															<parameter>
+																<add>
 																	<value>
-																		<call>
-																			<function>systemTime</function>
-																			<parameters/>
-																		</call>
+																		<multiply>
+																			<value>
+																				<call>
+																					<function>getAppTime</function>
+																					<parameters/>
+																				</call>
+																			</value>
+																			<value>0.0005</value>
+																		</multiply>
 																	</value>
-																	<value>0.0005</value>
-																</multiply>
-															</value>
-															<value>4</value>
-														</add>
-													</parameter>
-												</parameters>
-											</call>
-										</parameter>
-									</parameters>
-								</call>
-							</value>
-						</assign>
+																	<value>4</value>
+																</add>
+															</parameter>
+														</parameters>
+													</call>
+												</parameter>
+											</parameters>
+										</call>
+									</value>
+								</assign>
+							</code>
+						</on>
 						<comment>\SPick\Sa\Scamera</comment>
 						<assign depth="2" id="28">
 							<value>
