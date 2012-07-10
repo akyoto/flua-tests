@@ -1,0 +1,71 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<function depth="0" id="1">
+			<parameters>
+				<parameter>x</parameter>
+			</parameters>
+			<name>ret1</name>
+			<code>
+				<if-block depth="1" id="2">
+					<if>
+						<condition>
+							<equal>
+								<value>x</value>
+								<value>5</value>
+							</equal>
+						</condition>
+						<code>
+							<return depth="2" id="3">42</return>
+						</code>
+					</if>
+				</if-block>
+				<return depth="1" id="4">
+					<call>
+						<function>ret2</function>
+						<parameters>
+							<parameter>x</parameter>
+						</parameters>
+					</call>
+				</return>
+			</code>
+			<meta/>
+		</function>
+		<function depth="0" id="5">
+			<parameters>
+				<parameter>x</parameter>
+			</parameters>
+			<name>ret2</name>
+			<code>
+				<return depth="1" id="6">
+					<call>
+						<function>ret1</function>
+						<parameters>
+							<parameter>x</parameter>
+						</parameters>
+					</call>
+				</return>
+			</code>
+			<meta/>
+		</function>
+		<call depth="0" id="7">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<call>
+						<function>ret2</function>
+						<parameters>
+							<parameter>99</parameter>
+						</parameters>
+					</call>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

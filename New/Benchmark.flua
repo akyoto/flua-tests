@@ -1,0 +1,27 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.Utils.Benchmark</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">abc</string>
+		</strings>
+	</header>
+	<code>
+		<in depth="0" id="1">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_0</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<noop depth="1" id="2"/>
+			</code>
+		</in>
+	</code>
+</module>

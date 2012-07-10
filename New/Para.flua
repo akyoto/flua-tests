@@ -74,18 +74,24 @@
 								</index>
 							</value>
 							<value>
-								<add>
+								<multiply>
 									<value>
 										<index>
 											<value>l</value>
 											<value>i</value>
 										</index>
 									</value>
-									<value>1</value>
-								</add>
+									<value>
+										<index>
+											<value>l</value>
+											<value>i</value>
+										</index>
+									</value>
+								</multiply>
 							</value>
 						</assign>
 					</code>
+					<meta/>
 				</for>
 			</code>
 		</function>

@@ -1,0 +1,71 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>abc</value>
+			<value>
+				<new>
+					<type>
+						<template-call>
+							<value>Vector</value>
+							<value>Int</value>
+						</template-call>
+					</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<on depth="0" id="2">
+			<expression>abc</expression>
+			<code>
+				<call depth="1" id="3">
+					<function>add</function>
+					<parameters>
+						<parameter>1</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="4">
+					<function>add</function>
+					<parameters>
+						<parameter>2</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="5">
+					<function>add</function>
+					<parameters>
+						<parameter>3</parameter>
+					</parameters>
+				</call>
+			</code>
+		</on>
+		<call depth="0" id="6">
+			<function>
+				<access>
+					<value>abc</value>
+					<value>interpose</value>
+				</access>
+			</function>
+			<parameters>
+				<parameter>99</parameter>
+			</parameters>
+		</call>
+		<foreach depth="0" id="7">
+			<iterator>x</iterator>
+			<collection>abc</collection>
+			<code>
+				<call depth="1" id="8">
+					<function>print</function>
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+	</code>
+</module>

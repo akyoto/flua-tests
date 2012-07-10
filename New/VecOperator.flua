@@ -1,0 +1,52 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>playground.Everything</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">Hello</string>
+			<string id="flua_string_1">abc</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>a</value>
+			<value>
+				<new>
+					<type>Vector3</type>
+					<parameters>
+						<parameter>2</parameter>
+						<parameter>2</parameter>
+						<parameter>2</parameter>
+					</parameters>
+				</new>
+			</value>
+		</assign>
+		<assign-add depth="0" id="2">
+			<value>a</value>
+			<value>5</value>
+		</assign-add>
+		<call depth="0" id="3">
+			<function>print</function>
+			<parameters>
+				<parameter>a</parameter>
+			</parameters>
+		</call>
+		<assign depth="0" id="4">
+			<value>b</value>
+			<value>flua_string_0</value>
+		</assign>
+		<assign-add depth="0" id="5">
+			<value>b</value>
+			<value>flua_string_1</value>
+		</assign-add>
+		<call depth="0" id="6">
+			<function>print</function>
+			<parameters>
+				<parameter>b</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

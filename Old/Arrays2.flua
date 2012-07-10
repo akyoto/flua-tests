@@ -1,0 +1,129 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">start</string>
+			<string id="flua_string_1">iter</string>
+			<string id="flua_string_2">Hello</string>
+			<string id="flua_string_3">Hello</string>
+			<string id="flua_string_4">World</string>
+		</strings>
+	</header>
+	<code>
+		<call depth="0" id="1">
+			<function>print</function>
+			<parameters>
+				<parameter>flua_string_0</parameter>
+			</parameters>
+		</call>
+		<assign depth="0" id="2">
+			<value>a</value>
+			<value>
+				<index>
+					<value>_flua_seq</value>
+					<value>
+						<parameters>
+							<parameter>3</parameter>
+							<parameter>4</parameter>
+							<parameter>5</parameter>
+						</parameters>
+					</value>
+				</index>
+			</value>
+		</assign>
+		<call depth="0" id="3">
+			<function>print</function>
+			<parameters>
+				<parameter>flua_string_1</parameter>
+			</parameters>
+		</call>
+		<assign depth="0" id="4">
+			<value>b</value>
+			<value>
+				<index>
+					<value>_flua_seq</value>
+					<value>
+						<parameters>
+							<parameter>3.5</parameter>
+							<parameter>4.5</parameter>
+						</parameters>
+					</value>
+				</index>
+			</value>
+		</assign>
+		<assign depth="0" id="5">
+			<value>c</value>
+			<value>
+				<index>
+					<value>_flua_seq</value>
+					<value>flua_string_2</value>
+				</index>
+			</value>
+		</assign>
+		<assign depth="0" id="6">
+			<value>d</value>
+			<value>
+				<index>
+					<value>_flua_seq</value>
+					<value>
+						<parameters>
+							<parameter>flua_string_3</parameter>
+							<parameter>flua_string_4</parameter>
+						</parameters>
+					</value>
+				</index>
+			</value>
+		</assign>
+		<foreach depth="0" id="7">
+			<iterator>x</iterator>
+			<collection>a</collection>
+			<code>
+				<call depth="1" id="8">
+					<function>print</function>
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+		<foreach depth="0" id="9">
+			<iterator>x</iterator>
+			<collection>b</collection>
+			<code>
+				<call depth="1" id="10">
+					<function>print</function>
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+		<foreach depth="0" id="11">
+			<iterator>x</iterator>
+			<collection>c</collection>
+			<code>
+				<call depth="1" id="12">
+					<function>print</function>
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+		<foreach depth="0" id="13">
+			<iterator>x</iterator>
+			<collection>d</collection>
+			<code>
+				<call depth="1" id="14">
+					<function>print</function>
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+	</code>
+</module>

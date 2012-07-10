@@ -1,0 +1,192 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>playground.Everything</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">test1</string>
+			<string id="flua_string_1">test2</string>
+			<string id="flua_string_2">test3</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>a</value>
+			<value>100.1</value>
+		</assign>
+		<assign depth="0" id="2">
+			<value>b</value>
+			<value>200.0</value>
+		</assign>
+		<assign depth="0" id="3">
+			<value>c</value>
+			<value>0.0</value>
+		</assign>
+		<in depth="0" id="4">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_0</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<for depth="1" id="5">
+					<iterator>i</iterator>
+					<from>0</from>
+					<until>
+						<multiply>
+							<value>
+								<multiply>
+									<value>1024</value>
+									<value>1024</value>
+								</multiply>
+							</value>
+							<value>2</value>
+						</multiply>
+					</until>
+					<code>
+						<assign depth="2" id="6">
+							<value>c</value>
+							<value>
+								<call>
+									<function>distance</function>
+									<parameters>
+										<parameter>0</parameter>
+										<parameter>0</parameter>
+										<parameter>a</parameter>
+										<parameter>b</parameter>
+									</parameters>
+								</call>
+							</value>
+						</assign>
+					</code>
+					<meta/>
+				</for>
+			</code>
+		</in>
+		<call depth="0" id="7">
+			<function>print</function>
+			<parameters>
+				<parameter>c</parameter>
+			</parameters>
+		</call>
+		<in depth="0" id="8">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_1</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<for depth="1" id="9">
+					<iterator>i</iterator>
+					<from>0</from>
+					<until>
+						<multiply>
+							<value>
+								<multiply>
+									<value>1024</value>
+									<value>1024</value>
+								</multiply>
+							</value>
+							<value>2</value>
+						</multiply>
+					</until>
+					<code>
+						<assign depth="2" id="10">
+							<value>c</value>
+							<value>
+								<call>
+									<function>sqr</function>
+									<parameters>
+										<parameter>
+											<add>
+												<value>
+													<multiply>
+														<value>a</value>
+														<value>a</value>
+													</multiply>
+												</value>
+												<value>
+													<multiply>
+														<value>b</value>
+														<value>b</value>
+													</multiply>
+												</value>
+											</add>
+										</parameter>
+									</parameters>
+								</call>
+							</value>
+						</assign>
+					</code>
+					<meta/>
+				</for>
+			</code>
+		</in>
+		<in depth="0" id="11">
+			<expression>
+				<new>
+					<type>Benchmark</type>
+					<parameters>
+						<parameter>flua_string_2</parameter>
+					</parameters>
+				</new>
+			</expression>
+			<code>
+				<for depth="1" id="12">
+					<iterator>i</iterator>
+					<from>0</from>
+					<until>
+						<multiply>
+							<value>
+								<multiply>
+									<value>1024</value>
+									<value>1024</value>
+								</multiply>
+							</value>
+							<value>2</value>
+						</multiply>
+					</until>
+					<code>
+						<assign depth="2" id="13">
+							<value>c</value>
+							<value>
+								<divide>
+									<value>a</value>
+									<value>
+										<call>
+											<function>sin</function>
+											<parameters>
+												<parameter>
+													<call>
+														<function>atan</function>
+														<parameters>
+															<parameter>
+																<divide>
+																	<value>a</value>
+																	<value>b</value>
+																</divide>
+															</parameter>
+														</parameters>
+													</call>
+												</parameter>
+											</parameters>
+										</call>
+									</value>
+								</divide>
+							</value>
+						</assign>
+					</code>
+					<meta/>
+				</for>
+			</code>
+		</in>
+	</code>
+</module>

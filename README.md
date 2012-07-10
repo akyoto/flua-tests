@@ -1,4 +1,4 @@
-eurbach
-=======
+flua-tests
+=========
 
-My Flua projects. Mostly tests and some other stuff.
+My Flua test repository.

@@ -1,0 +1,22 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">123</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>
+				<declare-type>
+					<value>b</value>
+					<value>Int</value>
+				</declare-type>
+			</value>
+			<value>flua_string_0</value>
+		</assign>
+	</code>
+</module>

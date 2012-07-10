@@ -1,0 +1,38 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>a</value>
+			<value>
+				<index>
+					<value>_flua_seq</value>
+					<value>
+						<parameters>
+							<parameter>1</parameter>
+							<parameter>2</parameter>
+							<parameter>3</parameter>
+						</parameters>
+					</value>
+				</index>
+			</value>
+		</assign>
+		<foreach depth="0" id="2">
+			<iterator>x</iterator>
+			<collection>a</collection>
+			<code>
+				<call depth="1" id="3">
+					<function>print</function>
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+	</code>
+</module>

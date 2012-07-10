@@ -30,7 +30,12 @@
 					<name>init</name>
 					<code>
 						<assign depth="2" id="7">
-							<value>x</value>
+							<value>
+								<access>
+									<value>my</value>
+									<value>x</value>
+								</access>
+							</value>
 							<value>
 								<call>
 									<function>cos</function>
