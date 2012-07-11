@@ -8,10 +8,10 @@
 	</header>
 	<code>
 		<function depth="0" id="1">
+			<name>ret1</name>
 			<parameters>
 				<parameter>x</parameter>
 			</parameters>
-			<name>ret1</name>
 			<code>
 				<if-block depth="1" id="2">
 					<if>
@@ -38,10 +38,10 @@
 			<meta/>
 		</function>
 		<function depth="0" id="5">
+			<name>ret2</name>
 			<parameters>
 				<parameter>x</parameter>
 			</parameters>
-			<name>ret2</name>
 			<code>
 				<return depth="1" id="6">
 					<call>
