@@ -1,0 +1,47 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<call depth="0" id="1">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<in-range lower-operation="greater-or-equal" upper-operation="greater-or-equal">
+						<lower>5</lower>
+						<value>4</value>
+						<upper>3</upper>
+					</in-range>
+				</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="2">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<in-range lower-operation="less" upper-operation="less">
+						<lower>3</lower>
+						<value>4</value>
+						<upper>5</upper>
+					</in-range>
+				</parameter>
+			</parameters>
+		</call>
+		<call depth="0" id="3">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<in-range lower-operation="less" upper-operation="less">
+						<lower>3</lower>
+						<value>2.1</value>
+						<upper>5</upper>
+					</in-range>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

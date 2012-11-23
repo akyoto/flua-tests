@@ -1,0 +1,63 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">Start.</string>
+			<string id="flua_string_1">Done.</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>a</value>
+			<value>
+				<new>
+					<type>
+						<template-call>
+							<value>Vector</value>
+							<value>Int</value>
+						</template-call>
+					</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<call depth="0" id="2">
+			<function>print</function>
+			<parameters>
+				<parameter>flua_string_0</parameter>
+			</parameters>
+		</call>
+		<assign depth="0" id="3">
+			<value>n</value>
+			<value>10000000</value>
+		</assign>
+		<for depth="0" id="5">
+			<iterator>i</iterator>
+			<from>1</from>
+			<to>n</to>
+			<code>
+				<call depth="1" id="6">
+					<function>
+						<access>
+							<value>a</value>
+							<value>add</value>
+						</access>
+					</function>
+					<parameters>
+						<parameter>i</parameter>
+					</parameters>
+				</call>
+			</code>
+			<meta/>
+		</for>
+		<call depth="0" id="8">
+			<function>print</function>
+			<parameters>
+				<parameter>flua_string_1</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

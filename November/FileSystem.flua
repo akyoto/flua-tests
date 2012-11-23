@@ -1,0 +1,118 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.FileSystem</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">World</string>
+			<string id="flua_string_1">test.txt</string>
+			<string id="flua_string_2">Hello</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="3">
+			<value>obj</value>
+			<value>
+				<new>
+					<type>Test</type>
+					<parameters/>
+				</new>
+			</value>
+		</assign>
+		<class depth="0" id="5">
+			<name>Test</name>
+			<code>
+				<public depth="1" id="6">
+					<noop depth="2" id="7"/>
+				</public>
+				<function depth="1" id="9">
+					<name>init</name>
+					<code>
+						<noop depth="2" id="10"/>
+					</code>
+					<meta/>
+				</function>
+				<get depth="1" id="12">
+					<getter depth="2" id="13">
+						<name>data</name>
+						<code>
+							<return depth="3" id="14">
+								<access>
+									<value>flua_string_0</value>
+									<value>data</value>
+								</access>
+							</return>
+						</code>
+						<meta/>
+					</getter>
+					<getter depth="2" id="16">
+						<name>length</name>
+						<code>
+							<return depth="3" id="17">5</return>
+						</code>
+						<meta/>
+					</getter>
+				</get>
+			</code>
+			<meta/>
+		</class>
+		<assign depth="0" id="19">
+			<value>fileName</value>
+			<value>flua_string_1</value>
+		</assign>
+		<in depth="0" id="21">
+			<expression>
+				<assign>
+					<value>o</value>
+					<value>
+						<new>
+							<type>FileWriteStream</type>
+							<parameters>
+								<parameter>fileName</parameter>
+							</parameters>
+						</new>
+					</value>
+				</assign>
+			</expression>
+			<code>
+				<call depth="1" id="22">
+					<function>
+						<access>
+							<value>o</value>
+							<value>writeLine</value>
+						</access>
+					</function>
+					<parameters>
+						<parameter>flua_string_2</parameter>
+					</parameters>
+				</call>
+				<call depth="1" id="23">
+					<function>
+						<access>
+							<value>o</value>
+							<value>write</value>
+						</access>
+					</function>
+					<parameters>
+						<parameter>obj</parameter>
+					</parameters>
+				</call>
+			</code>
+		</in>
+		<call depth="0" id="25">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<call>
+						<function>readFile</function>
+						<parameters>
+							<parameter>fileName</parameter>
+						</parameters>
+					</call>
+				</parameter>
+			</parameters>
+		</call>
+	</code>
+</module>

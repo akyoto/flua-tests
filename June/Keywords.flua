@@ -8,7 +8,7 @@
 		<strings/>
 	</header>
 	<code>
-		<assign depth="0" id="1">
+		<assign depth="0" id="3">
 			<value>a</value>
 			<value>
 				<new>
@@ -22,22 +22,22 @@
 				</new>
 			</value>
 		</assign>
-		<on depth="0" id="2">
+		<on depth="0" id="5">
 			<expression>a</expression>
 			<code>
-				<call depth="1" id="3">
+				<call depth="1" id="6">
 					<function>add</function>
 					<parameters>
 						<parameter>3</parameter>
 					</parameters>
 				</call>
-				<call depth="1" id="4">
+				<call depth="1" id="7">
 					<function>add</function>
 					<parameters>
 						<parameter>5</parameter>
 					</parameters>
 				</call>
-				<call depth="1" id="5">
+				<call depth="1" id="8">
 					<function>add</function>
 					<parameters>
 						<parameter>7</parameter>
@@ -45,11 +45,11 @@
 				</call>
 			</code>
 		</on>
-		<foreach depth="0" id="6">
+		<foreach depth="0" id="10">
 			<iterator>x</iterator>
 			<collection>a</collection>
 			<code>
-				<call depth="1" id="7">
+				<call depth="1" id="11">
 					<function>print</function>
 					<parameters>
 						<parameter>x</parameter>

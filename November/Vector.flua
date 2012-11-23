@@ -1,0 +1,98 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+		</dependencies>
+		<strings>
+			<string id="flua_string_0">-</string>
+		</strings>
+	</header>
+	<code>
+		<assign depth="0" id="1">
+			<value>a</value>
+			<value>
+				<index>
+					<value>_flua_seq</value>
+					<value>
+						<parameters>
+							<parameter>1</parameter>
+							<parameter>2</parameter>
+							<parameter>2</parameter>
+							<parameter>3</parameter>
+							<parameter>5</parameter>
+						</parameters>
+					</value>
+				</index>
+			</value>
+		</assign>
+		<assign depth="0" id="2">
+			<value>b</value>
+			<value>
+				<index>
+					<value>_flua_seq</value>
+					<value>
+						<parameters>
+							<parameter>2</parameter>
+							<parameter>3</parameter>
+							<parameter>4</parameter>
+						</parameters>
+					</value>
+				</index>
+			</value>
+		</assign>
+		<assign depth="0" id="3">
+			<value>c</value>
+			<value>
+				<bitwise-and>
+					<value>a</value>
+					<value>b</value>
+				</bitwise-and>
+			</value>
+		</assign>
+		<assign depth="0" id="4">
+			<value>d</value>
+			<value>
+				<subtract>
+					<value>a</value>
+					<value>b</value>
+				</subtract>
+			</value>
+		</assign>
+		<foreach depth="0" id="6">
+			<iterator>x</iterator>
+			<collection>c</collection>
+			<code>
+				<call depth="1" id="7">
+					<function>print</function>
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+		<call depth="0" id="9">
+			<function>print</function>
+			<parameters>
+				<parameter>
+					<multiply>
+						<value>flua_string_0</value>
+						<value>80</value>
+					</multiply>
+				</parameter>
+			</parameters>
+		</call>
+		<foreach depth="0" id="11">
+			<iterator>x</iterator>
+			<collection>d</collection>
+			<code>
+				<call depth="1" id="12">
+					<function>print</function>
+					<parameters>
+						<parameter>x</parameter>
+					</parameters>
+				</call>
+			</code>
+		</foreach>
+	</code>
+</module>

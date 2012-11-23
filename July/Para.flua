@@ -11,8 +11,8 @@
 		</strings>
 	</header>
 	<code>
-		<const depth="0" id="1">
-			<assign depth="1" id="2">
+		<const depth="0" id="3">
+			<assign depth="1" id="4">
 				<value>COUNT</value>
 				<value>
 					<multiply>
@@ -27,7 +27,7 @@
 				</value>
 			</assign>
 		</const>
-		<assign depth="0" id="3">
+		<assign depth="0" id="6">
 			<value>mylist</value>
 			<value>
 				<new>
@@ -43,7 +43,8 @@
 				</new>
 			</value>
 		</assign>
-		<function depth="0" id="4">
+		<function depth="0" id="8">
+			<name>doop</name>
 			<parameters>
 				<parameter>start</parameter>
 				<parameter>end</parameter>
@@ -59,14 +60,13 @@
 					</declare-type>
 				</parameter>
 			</parameters>
-			<name>doop</name>
 			<code>
-				<for depth="1" id="5">
+				<for depth="1" id="9">
 					<iterator>i</iterator>
 					<from>start</from>
 					<until>end</until>
 					<code>
-						<assign depth="2" id="6">
+						<assign depth="2" id="10">
 							<value>
 								<index>
 									<value>l</value>
@@ -95,7 +95,7 @@
 				</for>
 			</code>
 		</function>
-		<in depth="0" id="7">
+		<in depth="0" id="12">
 			<expression>
 				<new>
 					<type>Benchmark</type>
@@ -105,7 +105,7 @@
 				</new>
 			</expression>
 			<code>
-				<call depth="1" id="8">
+				<call depth="1" id="13">
 					<function>doop</function>
 					<parameters>
 						<parameter>0</parameter>
@@ -115,7 +115,7 @@
 				</call>
 			</code>
 		</in>
-		<in depth="0" id="9">
+		<in depth="0" id="15">
 			<expression>
 				<new>
 					<type>Benchmark</type>
@@ -125,9 +125,9 @@
 				</new>
 			</expression>
 			<code>
-				<parallel depth="1" id="10">
+				<parallel depth="1" id="16">
 					<code>
-						<call depth="2" id="11">
+						<call depth="2" id="17">
 							<function>doop</function>
 							<parameters>
 								<parameter>0</parameter>
@@ -140,7 +140,7 @@
 								<parameter>mylist</parameter>
 							</parameters>
 						</call>
-						<call depth="2" id="12">
+						<call depth="2" id="18">
 							<function>doop</function>
 							<parameters>
 								<parameter>
@@ -163,7 +163,7 @@
 								<parameter>mylist</parameter>
 							</parameters>
 						</call>
-						<call depth="2" id="13">
+						<call depth="2" id="19">
 							<function>doop</function>
 							<parameters>
 								<parameter>

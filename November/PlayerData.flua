@@ -1,0 +1,86 @@
+<module>
+	<header>
+		<title/>
+		<dependencies>
+			<import>flua.Core</import>
+			<import>flua.FileSystem</import>
+		</dependencies>
+		<strings/>
+	</header>
+	<code>
+		<class depth="0" id="3">
+			<name>PlayerData</name>
+			<code>
+				<implements depth="1" id="4">
+					<implements-interface depth="2" id="5">Serializable</implements-interface>
+				</implements>
+				<function depth="1" id="7">
+					<name>init</name>
+					<parameters>
+						<parameter>
+							<access>
+								<value>my</value>
+								<value>name</value>
+							</access>
+						</parameter>
+					</parameters>
+					<code>
+						<noop depth="2" id="8"/>
+					</code>
+				</function>
+				<function depth="1" id="10">
+					<name>writeToStream</name>
+					<parameters>
+						<parameter>stream</parameter>
+					</parameters>
+					<code>
+						<call depth="2" id="11">
+							<function>
+								<access>
+									<value>stream</value>
+									<value>writeLine</value>
+								</access>
+							</function>
+							<parameters>
+								<parameter>
+									<access>
+										<value>my</value>
+										<value>name</value>
+									</access>
+								</parameter>
+							</parameters>
+						</call>
+					</code>
+				</function>
+				<function depth="1" id="13">
+					<name>readFromStream</name>
+					<parameters>
+						<parameter>stream</parameter>
+					</parameters>
+					<code>
+						<assign depth="2" id="14">
+							<value>
+								<access>
+									<value>my</value>
+									<value>name</value>
+								</access>
+							</value>
+							<value>
+								<call>
+									<function>
+										<access>
+											<value>stream</value>
+											<value>readLine</value>
+										</access>
+									</function>
+									<parameters/>
+								</call>
+							</value>
+						</assign>
+					</code>
+				</function>
+			</code>
+			<meta/>
+		</class>
+	</code>
+</module>

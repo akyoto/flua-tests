@@ -15,7 +15,7 @@
 		</strings>
 	</header>
 	<code>
-		<foreach depth="0" id="1">
+		<foreach depth="0" id="3">
 			<iterator>line</iterator>
 			<collection>
 				<access>
@@ -31,7 +31,7 @@
 				</access>
 			</collection>
 			<code>
-				<if-block depth="1" id="2">
+				<if-block depth="1" id="4">
 					<if>
 						<condition>
 							<call>
@@ -47,7 +47,7 @@
 							</call>
 						</condition>
 						<code>
-							<call depth="2" id="3">
+							<call depth="2" id="5">
 								<function>print</function>
 								<parameters>
 									<parameter>

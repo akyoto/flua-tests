@@ -26,7 +26,7 @@
 						</code>
 					</if>
 				</if-block>
-				<return depth="1" id="4">
+				<return depth="1" id="5">
 					<call>
 						<function>ret2</function>
 						<parameters>
@@ -37,13 +37,13 @@
 			</code>
 			<meta/>
 		</function>
-		<function depth="0" id="5">
+		<function depth="0" id="7">
 			<name>ret2</name>
 			<parameters>
 				<parameter>x</parameter>
 			</parameters>
 			<code>
-				<return depth="1" id="6">
+				<return depth="1" id="8">
 					<call>
 						<function>ret1</function>
 						<parameters>
@@ -54,7 +54,7 @@
 			</code>
 			<meta/>
 		</function>
-		<call depth="0" id="7">
+		<call depth="0" id="10">
 			<function>print</function>
 			<parameters>
 				<parameter>
